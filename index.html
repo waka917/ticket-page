@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チケット画面 - iPhone14 Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎫</text></svg>">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="light-content">
+</head>
+<body>
+    <!-- ステータスバー -->
+    <div class="status-bar">
+        <div class="time" id="current-time">14:18</div>
+        <div class="indicators">
+            <span class="signal">●●●●</span>
+            <span class="wifi">📶</span>
+            <span class="battery">🔋<span id="battery">50</span></span>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    <div class="header">
+        <div class="header-left">
+            <div class="ticket-icon">○</div>
+            <span>チケ</span>
+            <span class="sub-text">入場/引換</span>
+        </div>
+        <div class="header-right">
+            <button class="refresh-btn" onclick="location.reload()">🔄</button>
+            <button class="menu-btn">☰</button>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+        <!-- イベント情報 -->
+        <div class="event-section">
+            <h1 class="event-title">PUNPEE & BIM</h1>
+            <div class="event-date">
+                📅 2025.09.05(Fri)
+            </div>
+            <div class="event-time">
+                🕕 開場 18:30 開演 19:30
+            </div>
+        </div>
+
+        <!-- チケット情報 -->
+        <div class="ticket-section">
+            <div class="ticket-header">
+                <span>お手持ちのチケット</span>
+                <span class="ticket-count">合計1枚</span>
+            </div>
+            
+            <div class="ticket-card">
+                <div class="ticket-type">ADV.</div>
+                <div class="ticket-info">
+                    <div class="ticket-number">整理番号 A190番</div>
+                    <div class="customer-info">
+                        <div class="avatar">
+                            <span>あなた</span>
+                        </div>
+                        <div class="details">
+                            <div class="name">若林 龍生様</div>
+                            <div class="phone">08069964066</div>
+                            <div class="price">7,700円</div>
+                        </div>
+                        <div class="checkbox">☐</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="confirmation" onclick="toggleDropdown()">
+                <span>ご来場までにご確認ください</span>
+                <span class="dropdown-arrow" id="dropdown-arrow">⌄</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- フッターナビゲーション -->
+    <div class="footer-nav">
+        <button class="nav-btn">←</button>
+        <span class="nav-text">チケット詳細/分配/受取</span>
+        <button class="nav-btn">→</button>
+    </div>
+
+    <!-- ホームインジケーター -->
+    <div class="home-indicator"></div>
+
+    <script>
+        // 現在時刻を表示
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}`;
+        }
+
+        // バッテリー残量をランダムに表示
+        function updateBatteryLevel() {
+            const battery = Math.floor(Math.random() * 50) + 50;
+            document.getElementById('battery').textContent = battery;
+        }
+
+        // ドロップダウン切り替え
+        function toggleDropdown() {
+            const arrow = document.getElementById('dropdown-arrow');
+            arrow.textContent = arrow.textContent === '⌄' ? '⌃' : '⌄';
+        }
+
+        // 初期化
+        updateTime();
+        updateBatteryLevel();
+        setInterval(updateTime, 60000); // 1分ごとに時刻更新
+    </script>
+</body>
+</html>
