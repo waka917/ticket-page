@@ -10,82 +10,63 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="light-content">
 </head>
 <body>
-    <!-- ステータスバー -->
-    <div class="status-bar">
-        <div class="time" id="current-time">14:18</div>
-        <div class="indicators">
-            <span class="signal">●●●●</span>
-            <span class="wifi">📶</span>
-            <span class="battery">🔋<span id="battery">50</span></span>
+    <div class="hero">
+        <!-- ステータスバー -->
+        <div class="status-bar">
+            <div class="time" id="current-time">14:18</div>
+            <div class="indicators">
+                <span class="signal">●●●●</span>
+                <span class="wifi">📶</span>
+                <span class="battery"><span id="battery">50%</span></span>
+            </div>
         </div>
-    </div>
-
-    <!-- ヘッダー -->
-    <div class="header">
-        <div class="header-left">
-            <div class="ticket-icon">○</div>
-            <span class="ticket-label">チケ</span>
-            <span class="sub-text">入場/引換</span>
+        <!-- ヘッダー -->
+        <div class="header">
+            <div class="header-left">
+                <div class="brand">O-チケ</div>
+                <span class="sub-text">入場／引換</span>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn" onclick="location.reload()" aria-label="更新">↻</button>
+                <button class="icon-btn" aria-label="メニュー">≡</button>
+            </div>
         </div>
-        <div class="header-right">
-            <button class="refresh-btn" onclick="location.reload()">🔄</button>
-            <button class="menu-btn">☰</button>
-        </div>
-    </div>
-
-    <!-- メインコンテンツ -->
-    <div class="main-content">
         <!-- イベント情報 -->
         <div class="event-section">
-            <h1 class="event-title">PUNPEE & BIM</h1>
-            <div class="event-date">
-                📅 2025.09.05(Fri)
-            </div>
-            <div class="event-time">
-                🕕 開場 18:30 開演 19:30
-            </div>
+            <h1 class="event-title" aria-label="イベント名">PUNPEE &amp; BIM</h1>
+            <div class="meta-line date">2025.09.05(Fri)</div>
+            <div class="meta-line time">開場 18:30　開演 19:30</div>
         </div>
+    </div>
 
-        <!-- チケット情報 -->
-        <div class="ticket-section">
-            <div class="ticket-header">
-                <span>お手持ちのチケット</span>
-                <span class="ticket-count">合計1枚</span>
+    <div class="tickets-area">
+        <div class="ticket-header">
+            <span class="th-left">お手持ちのチケット</span>
+            <span class="th-right">合計 1 枚</span>
+        </div>
+        <div class="ticket-card">
+            <div class="ticket-row top">
+                <div class="label">A D V .</div>
+                <div class="checkbox" aria-hidden="true"></div>
             </div>
-            
-            <div class="ticket-card">
-                <div class="ticket-type">ADV.</div>
-                <div class="ticket-info">
-                    <div class="ticket-number">整理番号 A190番</div>
-                    <div class="customer-info">
-                        <div class="avatar">
-                            <span>あなた</span>
-                        </div>
-                        <div class="details">
-                            <div class="name">若林 龍生様</div>
-                            <div class="phone">08069964066</div>
-                            <div class="price">7,700円</div>
-                        </div>
-                        <div class="checkbox">☐</div>
-                    </div>
+            <div class="number">整理番号 A190番</div>
+            <div class="person-row">
+                <div class="avatar"><span>あなた</span></div>
+                <div class="info">
+                    <div class="name">若林　龍生 様</div>
+                    <div class="tel">08069964066</div>
+                    <div class="price">7,700円</div>
                 </div>
             </div>
-
-            <div class="confirmation" onclick="toggleDropdown()">
-                <span>ご来場までにご確認ください</span>
-                <span class="dropdown-arrow" id="dropdown-arrow">⌄</span>
-            </div>
+            <div class="notice-toggle" onclick="toggleDropdown()">ご来場までにご確認ください <span id="dropdown-arrow">⌄</span></div>
         </div>
     </div>
 
-    <!-- フッターナビゲーション -->
-    <div class="footer-nav">
-        <button class="nav-btn">←</button>
-        <span class="nav-text">チケット詳細/分配/受取</span>
-        <button class="nav-btn">→</button>
+    <div class="bottom-bar">
+        <button class="nav-btn" aria-label="戻る">←</button>
+        <div class="center-text">チケット詳細／分配／受取</div>
+        <button class="nav-btn" aria-label="進む">→</button>
     </div>
-
-    <!-- ホームインジケーター -->
     <div class="home-indicator"></div>
 
     <script>

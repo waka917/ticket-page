@@ -1,320 +1,55 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Reset */
+*{margin:0;padding:0;box-sizing:border-box;}
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-    width: 390px;
-    height: 844px;
-    background: radial-gradient(ellipse at top center, #3B82F6 0%, #1E40AF 30%, #312E81 60%, #4C1D95 100%);
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Arial,sans-serif;width:390px;height:844px;background:#e9e9eb;position:relative;overflow:hidden;margin:0 auto;-webkit-font-smoothing:antialiased;}
 
-/* iPhone14 Pro用の調整 */
-@media screen and (max-width: 390px) {
-    body {
-        width: 100vw;
-        height: 100vh;
-    }
-}
+/* Hero */
+.hero {position:relative;width:100%;height:300px;background:radial-gradient(115% 140% at 70% -10%,#0048c3 0%,#003fae 35%,#00348f 55%,#062b72 75%,#082252 100%);border-bottom-left-radius:55% 38%;border-bottom-right-radius:55% 38%;overflow:hidden;}
 
-/* ステータスバー */
-.status-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 20px 4px 20px;
-    color: white;
-    font-size: 17px;
-    font-weight: 600;
-    height: 40px;
-}
+@media screen and (max-width:390px){body{width:100vw;height:100vh;}}
 
-.time {
-    font-weight: 600;
-    letter-spacing: -0.2px;
-    font-size: 17px;
-}
+.status-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px 4px;color:#fff;font-size:15px;font-weight:600;height:40px;}
+.time{font-weight:600;letter-spacing:-0.2px;font-size:15px;}
+.indicators{display:flex;gap:4px;align-items:center;font-size:15px;}
+.signal{font-size:11px;letter-spacing:-1px;}
 
-.indicators {
-    display: flex;
-    gap: 3px;
-    align-items: center;
-    font-size: 17px;
-}
+.header{display:flex;justify-content:space-between;align-items:center;padding:2px 16px 6px;color:#fff;height:44px;}
+.header-left{display:flex;align-items:center;gap:10px;}
+.brand{font-size:15px;font-weight:600;letter-spacing:1px;}
+.sub-text{font-size:14px;font-weight:400;opacity:.95;letter-spacing:.5px;}
+.header-right{display:flex;gap:12px;}
+.icon-btn{background:none;border:none;color:#fff;font-size:18px;line-height:1;cursor:pointer;padding:4px 6px;border-radius:6px;}
+.icon-btn:active{background:rgba(255,255,255,.18);}
 
-.signal {
-    font-size: 12px;
-    letter-spacing: -1px;
-}
+/* Event */
+.event-section{position:absolute;left:22px;bottom:28px;color:#fff;}
+.event-title{font-size:30px;font-weight:500;letter-spacing:10px;margin:0 0 18px;line-height:1;}
+.meta-line{font-size:14px;letter-spacing:.5px;opacity:.95;margin-bottom:4px;}
+.meta-line.time{margin-bottom:0;}
 
-.battery {
-    font-size: 17px;
-}
+/* Tickets area */
+.tickets-area{position:absolute;top:285px;left:0;width:100%;padding:0 14px;}
+.ticket-header{display:flex;justify-content:space-between;align-items:center;font-size:17px;color:#222;margin:0 4px 12px;font-weight:500;letter-spacing:.5px;}
+.th-right{font-size:15px;font-weight:500;color:#222;}
 
-/* ヘッダー */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 20px 8px 20px;
-    color: white;
-    height: 46px;
-}
+/* Card */
+.ticket-card{background:#fff;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.15);padding:14px 16px 18px;position:relative;}
+.ticket-row.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
+.label{font-size:12px;font-weight:600;letter-spacing:3px;color:#555;}
+.number{font-size:20px;font-weight:700;letter-spacing:1px;margin:8px 0 14px;color:#333;}
+.person-row{display:flex;align-items:flex-start;gap:12px;}
+.avatar{width:44px;height:44px;border:2px solid #0a54c2;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:#0a54c2;font-weight:600;background:#fff;}
+.info{flex:1;line-height:1.35;}
+.info .name{font-size:15px;font-weight:700;margin-bottom:2px;}
+.info .tel{font-size:13px;color:#555;margin-bottom:2px;}
+.info .price{font-size:15px;font-weight:600;}
+.checkbox{width:22px;height:22px;border:2px solid #c4c4c4;border-radius:4px;}
+.notice-toggle{margin-top:14px;font-size:14px;color:#222;display:flex;align-items:center;justify-content:space-between;}
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
+/* Bottom nav */
+.bottom-bar{position:absolute;left:0;right:0;bottom:54px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;color:#0a54c2;font-size:14px;}
+.nav-btn{background:none;border:none;color:#0a54c2;font-size:20px;padding:4px 8px;}
+.center-text{font-size:14px;letter-spacing:.5px;}
 
-.ticket-icon {
-    width: 20px;
-    height: 20px;
-    border: 1.2px solid white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: normal;
-}
-
-.ticket-label {
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.sub-text {
-    font-size: 16px;
-    margin-left: 4px;
-    opacity: 1;
-    font-weight: 400;
-}
-
-.header-right {
-    display: flex;
-    gap: 15px;
-}
-
-.refresh-btn, .menu-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 2px;
-    border-radius: 4px;
-    transition: opacity 0.2s;
-}
-
-.refresh-btn:active, .menu-btn:active {
-    opacity: 0.6;
-}
-
-/* メインコンテンツ */
-.main-content {
-    padding: 12px 20px;
-    height: calc(100vh - 140px);
-    display: flex;
-    flex-direction: column;
-}
-
-/* イベント情報 */
-.event-section {
-    color: white;
-    margin-bottom: 20px;
-}
-
-.event-title {
-    font-size: 28px;
-    font-weight: 300;
-    letter-spacing: 8px;
-    margin-bottom: 32px;
-    text-align: left;
-    line-height: 1.0;
-}
-
-.event-date, .event-time {
-    font-size: 15px;
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-weight: 400;
-}
-
-/* チケット情報 */
-.ticket-section {
-    flex: 1;
-}
-
-.ticket-header {
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    font-size: 15px;
-    margin-bottom: 10px;
-    font-weight: 400;
-}
-
-.ticket-count {
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 400;
-}
-
-/* チケットカード */
-.ticket-card {
-    background: white;
-    border-radius: 10px;
-    padding: 18px;
-    margin-bottom: 14px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-}
-
-.ticket-type {
-    background: #f6f6f6;
-    padding: 3px 10px;
-    border-radius: 10px;
-    font-size: 11px;
-    font-weight: 600;
-    color: #666;
-    display: inline-block;
-    margin-bottom: 10px;
-    letter-spacing: 0.3px;
-}
-
-.ticket-number {
-    font-size: 17px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 14px;
-    letter-spacing: 0.1px;
-}
-
-.customer-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.avatar {
-    width: 36px;
-    height: 36px;
-    border: 1.8px solid #4A90E2;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
-    color: #4A90E2;
-    font-weight: 600;
-    background: white;
-}
-
-.details {
-    flex: 1;
-    line-height: 1.2;
-}
-
-.name {
-    font-size: 13px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 1px;
-}
-
-.phone {
-    font-size: 11px;
-    color: #666;
-    margin-bottom: 1px;
-    font-weight: 400;
-}
-
-.price {
-    font-size: 13px;
-    font-weight: 600;
-    color: #333;
-}
-
-.checkbox {
-    width: 18px;
-    height: 18px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: #ccc;
-    cursor: pointer;
-}
-
-.checkbox:active {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-/* 確認事項 */
-.confirmation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #333;
-    background: rgba(255, 255, 255, 0.92);
-    padding: 12px 18px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 400;
-    cursor: pointer;
-}
-
-.dropdown-arrow {
-    font-size: 16px;
-    color: #666;
-}
-
-/* フッターナビゲーション */
-.footer-nav {
-    position: absolute;
-    bottom: 26px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    color: #4A90E2;
-    height: 36px;
-}
-
-.nav-btn {
-    background: none;
-    border: none;
-    color: #4A90E2;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 4px;
-    font-weight: 500;
-}
-
-.nav-text {
-    font-size: 13px;
-    color: #4A90E2;
-    font-weight: 400;
-}
-
-/* ホームインジケーター */
-.home-indicator {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 134px;
-    height: 5px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
-}
+/* Home indicator */
+.home-indicator{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:140px;height:5px;background:#000;border-radius:3px;opacity:.85;}
