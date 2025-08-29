@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    width: 390px;
+    height: 844px;
+    background: linear-gradient(145deg, #4A90E2 0%, #667eea 25%, #764ba2 75%, #9370DB 100%);
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* iPhone14 Pro用の調整 */
+@media screen and (max-width: 390px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/* ステータスバー */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px 8px 24px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    height: 44px;
+}
+
+.time {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.indicators {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.signal {
+    font-size: 10px;
+    letter-spacing: -1px;
+}
+
+/* ヘッダー */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    color: white;
+    height: 56px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ticket-icon {
+    width: 28px;
+    height: 28px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.sub-text {
+    font-size: 15px;
+    margin-left: 8px;
+    opacity: 0.9;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+}
+
+.refresh-btn, .menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+}
+
+.refresh-btn:active, .menu-btn:active {
+    opacity: 0.6;
+}
+
+/* メインコンテンツ */
+.main-content {
+    padding: 24px;
+    height: calc(100vh - 180px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* イベント情報 */
+.event-section {
+    color: white;
+    margin-bottom: 36px;
+}
+
+.event-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 32px;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.event-date, .event-time {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+/* チケット情報 */
+.ticket-section {
+    flex: 1;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.ticket-count {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+}
+
+/* チケットカード */
+.ticket-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+.ticket-type {
+    background: #f5f5f5;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #666;
+    display: inline-block;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.ticket-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border: 2.5px solid #4A90E2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #4A90E2;
+    font-weight: 700;
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.details {
+    flex: 1;
+    line-height: 1.4;
+}
+
+.name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.phone {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 4px;
+    font-weight: 400;
+}
+
+.price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+}
+
+.checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.checkbox:active {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* 確認事項 */
+.confirmation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 18px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: blur(10px);
+}
+
+.confirmation:active {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.dropdown-arrow {
+    font-size: 20px;
+    color: #666;
+    transition: transform 0.2s;
+}
+
+/* フッターナビゲーション */
+.footer-nav {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    color: #4A90E2;
+    height: 44px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #4A90E2;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.nav-btn:active {
+    background: rgba(74, 144, 226, 0.1);
+}
+
+.nav-text {
+    font-size: 15px;
+    color: #4A90E2;
+    font-weight: 500;
+}
+
+/* ホームインジケーター */
+.home-indicator {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 134px;
+    height: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+}
+
+/* アニメーション効果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ticket-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.event-title {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* タッチフィードバック */
+button:active, .confirmation:active, .checkbox:active {
+    transform: scale(0.98);
+}
