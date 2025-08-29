@@ -14,12 +14,14 @@
 .ticket-header{font-size:22px;font-weight:600;color:#191919;margin:0 12px 8px;}
 .th-right{font-size:18px;font-weight:600;}
 
-.ticket-card{padding:0;border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,.25);overflow:hidden;}
-.card-inner{padding:20px 28px 18px;position:relative;}
-/* ノッチ（上部中央の小さな突起） */
-.ticket-card:before,.ticket-card:after{content:"";position:absolute;top:-6px;width:34px;height:12px;background:#fff;border-radius:0 0 6px 6px;box-shadow:0 2px 3px rgba(0,0,0,.15);}
-.ticket-card:before{left:18px;}
-.ticket-card:after{right:18px;}
+.ticket-card{position:relative;padding:0;border:1px solid #cfcfd1;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.20);background:#fff;overflow:hidden;}
+/* 既存の左右ノッチを無効化 */
+.ticket-card:before,.ticket-card:after{content:none;}
+/* 単一ノッチ（やや右寄り） */
+.ticket-card::before{content:"";position:absolute;top:-7px;left:62%;transform:translateX(-50%);width:34px;height:13px;background:#fff;border:1px solid #cfcfd1;border-top:none;border-bottom-left-radius:8px;border-bottom-right-radius:8px;box-shadow:0 2px 3px rgba(0,0,0,.15);}
+.card-inner{padding:22px 26px 16px;position:relative;}
+/* 上部と下部（注意文）を分離する仕切りラインを下部要素側で描画 */
+.notice-row{border-top:1px solid #d5d5d6;background:#fff;}
 
 .adv-line{font-size:14px;letter-spacing:4px;color:#555;margin-bottom:10px;}
 .main-number{font-size:26px;font-weight:800;letter-spacing:1px;margin-bottom:14px;color:#2d2d2d;}
