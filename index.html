@@ -1,99 +1,90 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>チケット画面 - iPhone14 Pro</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎫</text></svg>">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="light-content">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=390, initial-scale=1.0, user-scalable=no" />
+	<title>チケット</title>
+	<link rel="stylesheet" href="style.css" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 </head>
 <body>
-    <div class="hero">
-        <!-- ステータスバー -->
-        <div class="status-bar">
-            <div class="time" id="current-time">14:18</div>
-            <div class="indicators">
-                <span class="signal">●●●●</span>
-                <span class="wifi">📶</span>
-                <span class="battery"><span id="battery">50%</span></span>
-            </div>
-        </div>
-        <!-- ヘッダー -->
-        <div class="header">
-            <div class="header-left">
-                <div class="brand">O-チケ</div>
-                <span class="sub-text">入場／引換</span>
-            </div>
-            <div class="header-right">
-                <button class="icon-btn" onclick="location.reload()" aria-label="更新">↻</button>
-                <button class="icon-btn" aria-label="メニュー">≡</button>
-            </div>
-        </div>
-        <!-- イベント情報 -->
-        <div class="event-section">
-            <h1 class="event-title" aria-label="イベント名">PUNPEE &amp; BIM</h1>
-            <div class="meta-line date">2025.09.05(Fri)</div>
-            <div class="meta-line time">開場 18:30　開演 19:30</div>
-        </div>
-    </div>
-
-    <div class="tickets-area">
-        <div class="ticket-header">
-            <span class="th-left">お手持ちのチケット</span>
-            <span class="th-right">合計 1 枚</span>
-        </div>
-        <div class="ticket-card">
-            <div class="ticket-row top">
-                <div class="label">A D V .</div>
-                <div class="checkbox" aria-hidden="true"></div>
-            </div>
-            <div class="number">整理番号 A190番</div>
-            <div class="person-row">
-                <div class="avatar"><span>あなた</span></div>
-                <div class="info">
-                    <div class="name">若林　龍生 様</div>
-                    <div class="tel">08069964066</div>
-                    <div class="price">7,700円</div>
-                </div>
-            </div>
-            <div class="notice-toggle" onclick="toggleDropdown()">ご来場までにご確認ください <span id="dropdown-arrow">⌄</span></div>
-        </div>
-    </div>
-
-    <div class="bottom-bar">
-        <button class="nav-btn" aria-label="戻る">←</button>
-        <div class="center-text">チケット詳細／分配／受取</div>
-        <button class="nav-btn" aria-label="進む">→</button>
-    </div>
-    <div class="home-indicator"></div>
-
-    <script>
-        // 現在時刻を表示
-        function updateTime() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('current-time').textContent = `${hours}:${minutes}`;
-        }
-
-        // バッテリー残量をランダムに表示
-        function updateBatteryLevel() {
-            const battery = Math.floor(Math.random() * 50) + 50;
-            document.getElementById('battery').textContent = battery;
-        }
-
-        // ドロップダウン切り替え
-        function toggleDropdown() {
-            const arrow = document.getElementById('dropdown-arrow');
-            arrow.textContent = arrow.textContent === '⌄' ? '⌃' : '⌄';
-        }
-
-        // 初期化
-        updateTime();
-        updateBatteryLevel();
-        setInterval(updateTime, 60000); // 1分ごとに時刻更新
-    </script>
+	<div class="hero">
+		<div class="status-bar">
+			<div class="time" id="current-time">14:18</div>
+			<div class="indicators">
+				<span class="signal">●●●●</span>
+				<span class="wifi">𐌼</span>
+				<span class="battery"><span id="battery">50</span>%</span>
+			</div>
+		</div>
+		<div class="header">
+			<div class="header-left">
+				<div class="logo-group">
+					<div class="logo-circle">O</div>
+					<div class="logo-text">LAWSON<br />TICKET</div>
+				</div>
+				<span class="mode-label">入場／引換</span>
+			</div>
+			<div class="header-right">
+				<button class="icon-btn" onclick="location.reload()" aria-label="更新">⟳</button>
+				<button class="icon-btn" aria-label="メニュー">≡</button>
+			</div>
+		</div>
+		<div class="event-section">
+			<h1 class="event-title">P U N P E E &nbsp; &nbsp; ＆ &nbsp; &nbsp; B I M</h1>
+			<div class="meta-lines">
+				<div class="meta-item">
+					<span class="ico">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2" ry="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="3" y1="11" x2="21" y2="11"/></svg>
+					</span>
+					<span class="meta-text">2025.09.05(Fri)</span>
+				</div>
+				<div class="meta-item">
+					<span class="ico">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+					</span>
+					<span class="meta-text">開場 18:30　開演 19:30</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section class="tickets-area">
+		<div class="ticket-header">
+			<span class="th-left">お手持ちのチケット</span>
+			<span class="th-right">合計 1 枚</span>
+		</div>
+		<article class="ticket-card" role="group" aria-label="チケット">
+			<div class="card-inner">
+				<div class="adv-line">A&nbsp;D&nbsp;V.</div>
+				<div class="main-number">整理番号 <span class="strong">A190番</span></div>
+				<div class="person-row">
+					<div class="avatar"><span>あなた</span></div>
+					<div class="info">
+						<div class="name">若林　龍生 様</div>
+						<div class="tel">08069964066</div>
+						<div class="price">7,700円</div>
+					</div>
+					<div class="check-box"></div>
+				</div>
+			</div>
+			<div class="notice-row" onclick="toggleDropdown()">
+				<div class="notice-text">ご来場までにご確認ください</div>
+				<div id="dropdown-arrow" class="arrow">⌄</div>
+			</div>
+		</article>
+	</section>
+	<div class="bottom-bar">
+		<button class="nav-btn" aria-label="戻る">←</button>
+		<div class="center-text">チケット詳細／分配／受取</div>
+		<button class="nav-btn" aria-label="進む">→</button>
+	</div>
+	<div class="home-indicator"></div>
+	<script>
+		function updateTime(){const n=new Date();const h=String(n.getHours()).padStart(2,'0');const m=String(n.getMinutes()).padStart(2,'0');document.getElementById('current-time').textContent=`${h}:${m}`}
+		function updateBattery(){document.getElementById('battery').textContent=Math.floor(Math.random()*30)+40}
+		function toggleDropdown(){const a=document.getElementById('dropdown-arrow');a.textContent=a.textContent==='⌄'?'⌃':'⌄'}
+		updateTime();updateBattery();setInterval(updateTime,60000);
+	</script>
 </body>
 </html>
